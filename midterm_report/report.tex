@@ -198,10 +198,38 @@ While the numerical trend increases ($68.8\% \rightarrow 73.0\% \rightarrow 76.6
 \label{fig:layers}
 \end{figure}
 
-\begin{figure*}[t]
+\begin{figure*}[p]
 \centering
-\includegraphics[width=0.96\textwidth]{figs/gallery.png}
-\caption{Representative qualitative examples across the four quadrants of the $2 \times 2$ attention grounding $\times$ answer correctness matrix: (1) Correct, attention on object (grounded reasoning); (2) Wrong, attention elsewhere (localization failure); (3) Wrong, attention on object (``seeing but not answering'' readout failure); (4) Correct, attention elsewhere (contextual deduction). Columns show original image with GT bounding box (green), query object-name attention map, overlay with attention peak (+), and target crop zoom.}
+\begin{minipage}{\textwidth}
+\centering
+{\small\bfseries
+\makebox[0.245\linewidth]{(a) Image + GT box}\hfill%
+\makebox[0.245\linewidth]{(b) Attention map}\hfill%
+\makebox[0.245\linewidth]{(c) Overlay + peak}\hfill%
+\makebox[0.245\linewidth]{(d) Target zoom}\par}
+\medskip
+{\small\raggedright\textbf{Case 1: Grounded reasoning: correct, attention on object}\par
+sa\_10052: What is the color of the plastic basin?\hfill Prediction: pink; GT: pink.\par}
+\smallskip
+\includegraphics[width=\linewidth,trim=0 9.8bp 0 41.2bp,clip]{figs/gallery_cases/correct_on_object__direct_attributes_sa_10052.png}
+\par\medskip
+{\small\raggedright\textbf{Case 2: Localization failure: wrong, attention elsewhere}\par
+sa\_16306: What is the color of the clock?\hfill Prediction: black; GT: green.\par}
+\smallskip
+\includegraphics[width=\linewidth,trim=0 9.8bp 0 41.2bp,clip]{figs/gallery_cases/wrong_elsewhere__direct_attributes_sa_16306.png}
+\par\medskip
+{\small\raggedright\textbf{Case 3: Binding/readout failure: wrong, attention on object}\par
+sa\_11528: What is the color of the woman's bikini?\hfill Prediction: yellow; GT: black.\par}
+\smallskip
+\includegraphics[width=\linewidth,trim=0 9.8bp 0 41.2bp,clip]{figs/gallery_cases/wrong_on_object__direct_attributes_sa_11528.png}
+\par\medskip
+{\small\raggedright\textbf{Case 4: Contextual deduction: correct, attention elsewhere}\par
+sa\_10033: Is the flag red or white?\hfill Prediction: white; GT: white.\par}
+\smallskip
+\includegraphics[width=\linewidth,trim=0 9.8bp 0 41.2bp,clip]{figs/gallery_cases/correct_elsewhere__direct_attributes_sa_10033.png}
+\par
+\end{minipage}
+\caption{Representative qualitative examples across the four quadrants of the $2 \times 2$ attention grounding $\times$ answer correctness matrix. Rows 1--4 show grounded reasoning, localization failure, binding/readout failure, and contextual deduction, respectively. Columns show (a) the original image with the ground-truth bounding box (green), (b) the query object-name attention map, (c) the image--attention overlay with the attention peak (white +), and (d) a zoom around the target. All panels retain their original aspect ratios.}
 \label{fig:gallery}
 \end{figure*}
 
