@@ -1,0 +1,18 @@
+model_id: Qwen/Qwen3.5-9B
+model_revision: c202236235762e1c871ad0ccb60c8ee5ba337b9a
+dataset_id: mgolov/Visual-Counterfact
+dataset_revision: f8cd0b2335356b0f01a164df0cac7403f56a6c83
+seed: 42
+dev_fraction: 0.25
+max_pairs: 200
+max_pixels: 262144
+blur_fraction: 0.04
+alphas: [0.0, 0.25, 0.5, 1.0, 1.5]
+scoring: sum
+batch_size: 1
+dtype: bfloat16
+device: cuda
+output: /home/npatri/rq2_visual_faithfulness/results
+excluded_pairs: [358, 409]  # Overlapping typical/counterfactual yellow labels; see verification report.
+enable_thinking: false
+min_pixels: 65536
