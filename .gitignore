@@ -1,0 +1,27 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Outputs and Large Data
+data/
+checkpoints/
+outputs/
+*.tar.gz
+*.zip
+*.tar
+*.log
+*.out
+
+# LaTeX build intermediates (keep .tex, .bib, .pdf, styles, figs)
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
